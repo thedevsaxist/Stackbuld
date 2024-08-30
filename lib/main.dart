@@ -1,18 +1,20 @@
 import 'package:stackbuld/commons.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(const Stackbuld());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Stackbuld extends StatelessWidget {
+  const Stackbuld({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Stackbuld',
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

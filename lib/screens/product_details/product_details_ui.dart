@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';  // change this to the path to your commons.dart file
+import 'package:stackbuld/commons.dart';
 
 part 'product_details_logic.dart';
 
