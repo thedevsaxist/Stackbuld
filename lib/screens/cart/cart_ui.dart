@@ -13,7 +13,6 @@ class _CartPageUi extends CartPageLogic {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appBackgroundColor,
       appBar: AppBar(
         centerTitle: false,
         title: Text(
@@ -81,7 +80,6 @@ class _CartPageUi extends CartPageLogic {
                     ),
                   ),
                   sizedBoxHeightOf8,
-                  
                   Expanded(
                     child: ListView.builder(
                       itemCount: productCount,
@@ -97,33 +95,8 @@ class _CartPageUi extends CartPageLogic {
           ),
 
           // checkout button
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              height: 70,
-              width: double.infinity,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'CHECKOUT',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: fontSizeBody,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          const CustomButton(
+            buttonLabel: 'CHECKOUT',
           ),
           sizedBoxHeightOf32,
         ],

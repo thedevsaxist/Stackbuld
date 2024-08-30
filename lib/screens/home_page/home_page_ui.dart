@@ -17,7 +17,6 @@ class _HomePageUi extends HomePageLogic {
       child: GestureDetector(
         onTap: FocusScope.of(context).unfocus,
         child: Scaffold(
-          backgroundColor: appBackgroundColor,
           appBar: AppBar(
             title: selectedIndex == 1 ? const Text('Wishlist') : null,
             actions: [

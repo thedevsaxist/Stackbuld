@@ -15,7 +15,7 @@ class IncrementButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           // TODO: change the color to a lighter shade when the item count is 1.
-          color: Colors.green,
+          color: appPrimaryColor,
           borderRadius: BorderRadius.circular(6),
         ),
         child: Icon(

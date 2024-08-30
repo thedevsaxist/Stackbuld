@@ -17,7 +17,10 @@ class Stackbuld extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Stackbuld',
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: appBackgroundColor,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: appPrimaryColor,
+        ),
         useMaterial3: true,
       ),
       initialRoute: '/',
