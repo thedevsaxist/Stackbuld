@@ -17,6 +17,22 @@ class Stackbuld extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Stackbuld',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: appPrimaryColor,
+          centerTitle: false,
+          titleTextStyle: GoogleFonts.poppins(
+            fontSize: fontSizeTitle,
+            fontWeight: FontWeight.bold,
+          ),
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: appPrimaryColor,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        ),
         scaffoldBackgroundColor: appBackgroundColor,
         colorScheme: ColorScheme.fromSeed(
           seedColor: appPrimaryColor,

@@ -2,6 +2,7 @@
 export 'firebase_options.dart';
 export 'images/image_variables.dart';
 export 'package:flutter/material.dart';
+export 'package:flutter/cupertino.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:firebase_core/firebase_core.dart';
 
@@ -22,7 +23,9 @@ export 'widgets/item_card.dart';
 export 'widgets/cart_item.dart';
 export 'widgets/search_box.dart';
 export 'widgets/grid_layout.dart';
+export 'widgets/filter_item.dart';
 export 'widgets/custom_button.dart';
+export 'widgets/price_range_box.dart';
 export 'widgets/add_to_favorite.dart';
 export 'widgets/increment_button.dart';
 export 'widgets/home_page_floating_icons.dart';

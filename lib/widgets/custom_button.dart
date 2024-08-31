@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                buttonLabel,
+                buttonLabel.toUpperCase(),
                 style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

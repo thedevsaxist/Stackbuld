@@ -15,13 +15,7 @@ class _CartPageUi extends CartPageLogic {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text(
-          'Cart',
-          style: GoogleFonts.poppins(
-            fontSize: fontSizeTitle,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        title: const Text('Cart'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +90,7 @@ class _CartPageUi extends CartPageLogic {
 
           // checkout button
           const CustomButton(
-            buttonLabel: 'CHECKOUT',
+            buttonLabel: 'Checkout',
           ),
           sizedBoxHeightOf32,
         ],

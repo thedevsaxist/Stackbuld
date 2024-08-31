@@ -26,7 +26,7 @@ class _HomePageUi extends HomePageLogic {
                   ? const SearchBox()
                   : const Icon(
                       Icons.search,
-                    ),
+                    ),  //TODO: When this is tapped, it should animate into a searchbox
 
               // cart icon
               IconButton(
@@ -52,9 +52,8 @@ class _HomePageUi extends HomePageLogic {
           ),
 
           // floating action buttons
-          floatingActionButton: selectedIndex == 0
-              ? const HomePageFloatingIcons()
-              : null,
+          floatingActionButton:
+              selectedIndex == 0 ? const HomePageFloatingIcons() : null,
 
           // bottom navigation bar
           bottomNavigationBar: BottomNavigationBar(
