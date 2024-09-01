@@ -1,6 +1,6 @@
 # The Skeleton Structure
 
-> 📘 Note: Use the `ui & logic template` template to create new screens for your app. The template contains the two files you will need to build your UI and logic separately. 
+> 📘 Note: Use the `ui & logic template` template to create new screens for your app. The template contains the two files you will need to build your UI and logic separately.
 
 You can skip to the `Files and Folder structure` section, to understand the file structure. [Files and Folder Structure](#files-and-folder-structure)
 
@@ -20,7 +20,7 @@ Visual Studio code extension that allows you to quickly create new projects base
 
 >**NOTE:** Make sure you create the template using just this folder, to avoid adding some unnecessary files.
 
-4. Use the Command Palette to execute the command `Project: Save Project As Template`. Enter the name for your template: `ui & logic template`. The contents of your root workspace directory will be copied to a new template folder.
+4.Use the Command Palette to execute the command `Project: Save Project As Template`. Enter the name for your template: `ui & logic template`. The contents of your root workspace directory will be copied to a new template folder.
 
 - If called from the context menu, the contents of the selected folder will be copied to the new template folder.
 Placeholders

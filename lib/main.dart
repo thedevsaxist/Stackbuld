@@ -1,23 +1,22 @@
 import 'package:stackbuld/commons.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(const Stackbuld());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Stackbuld extends StatelessWidget {
+  const Stackbuld({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Stackbuld',
-      theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      debugShowCheckedModeBanner: false,
+      // routes
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePageUi(),
@@ -26,6 +25,44 @@ class MyApp extends StatelessWidget {
         '/filter': (context) => const ProductFilterPageUi(),
         '/product_details': (context) => const ProductDetailsUi(),
       },
+      theme: ThemeData(
+        useMaterial3: true,
+
+        // tab bar theme
+        tabBarTheme: TabBarTheme(
+          labelColor: appBackgroundColor,
+          unselectedLabelColor: appSecondaryColor,
+          indicatorColor: appBackgroundColor,
+        ),
+
+        // app bar theme
+        appBarTheme: AppBarTheme(
+          backgroundColor: appPrimaryColor,
+          centerTitle: false,
+          iconTheme: IconThemeData(color: appBackgroundColor),
+          titleTextStyle: GoogleFonts.poppins(
+            fontSize: fontSizeTitle,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        // bottom navigation bar theme
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: appPrimaryColor,
+          selectedItemColor: appBackgroundColor,
+          unselectedItemColor: appBackgroundColor,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        ),
+
+        // scaffold theme
+        scaffoldBackgroundColor: appBackgroundColor,
+
+        // color scheme
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: appPrimaryColor,
+        ),
+      ),
     );
   }
 }
