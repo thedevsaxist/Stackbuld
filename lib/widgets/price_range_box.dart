@@ -19,7 +19,7 @@ class PriceRangeBox extends StatelessWidget {
             Text(
               boxLabel.toUpperCase(),
               style: GoogleFonts.poppins(
-                color: appShadowColor,
+                color: appSecondaryColor,
                 fontSize: fontSizeBody,
               ),
             ),
@@ -28,11 +28,11 @@ class PriceRangeBox extends StatelessWidget {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
-                  borderSide: BorderSide(color: appShadowColor),
+                  borderSide: BorderSide(color: appSecondaryColor),
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
-                  borderSide: BorderSide(color: appShadowColor),
+                  borderSide: BorderSide(color: appSecondaryColor),
                 ),
               ),
             )

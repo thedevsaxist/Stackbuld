@@ -7,7 +7,9 @@ abstract class HomePageLogic extends State<HomePageUi> {
   ];
 
   List<Widget> tabItems = [
-    const Tab(child: FoodCategory()),
+    const Tab(
+      child: FoodCategory(),
+    ),
     const Tab(child: SportsCategory()),
     const Tab(child: DevicesCategory()),
     const Tab(child: CosmeticsCategory()),

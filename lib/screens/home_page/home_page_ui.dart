@@ -26,7 +26,7 @@ class _HomePageUi extends HomePageLogic {
                   ? const SearchBox()
                   : const Icon(
                       Icons.search,
-                    ),  //TODO: When this is tapped, it should animate into a searchbox
+                    ), //TODO: When this is tapped, it should animate into a searchbox
 
               // cart icon
               IconButton(
@@ -46,9 +46,16 @@ class _HomePageUi extends HomePageLogic {
           ),
 
           // product display
+          // body: Hero(
+          //   transitionOnUserGestures: true,
+          //   tag: 'productImage',
+          //   child: Image.asset('lib/images/pictures/m4_car.jpg'),
+          // ),
           body: Padding(
             padding: const EdgeInsets.all(5.0),
-            child: TabBarView(children: tabItems),
+            child: TabBarView(
+              children: tabItems,
+            ),
           ),
 
           // floating action buttons

@@ -92,7 +92,7 @@ class _CartPageUi extends CartPageLogic {
           const CustomButton(
             buttonLabel: 'Checkout',
           ),
-          sizedBoxHeightOf32,
+          
         ],
       ),
     );

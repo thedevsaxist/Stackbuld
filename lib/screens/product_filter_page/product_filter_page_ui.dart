@@ -38,7 +38,7 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4,
-                        color: appShadowColor,
+                        color: appSecondaryColor,
                       )
                     ],
                     borderRadius: BorderRadius.circular(12),
@@ -47,10 +47,14 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //TODO: Make this a dropdown
+
                       // category filter
                       const FilterItems(
                         filterItemName: 'Category',
                       ),
+
+                      //TODO: Make this a dropdown
 
                       // brand filter
                       const FilterItems(
@@ -82,9 +86,10 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
 
                       Divider(
                         height: 40,
-                        color: appShadowColor,
+                        color: appSecondaryColor,
                       ),
 
+                      // Product Rating
                       Text(
                         'Rating',
                         style: GoogleFonts.poppins(
@@ -106,7 +111,7 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
 
                       Divider(
                         height: 40,
-                        color: appShadowColor,
+                        color: appSecondaryColor,
                       ),
                     ],
                   ),

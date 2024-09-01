@@ -1,5 +1,4 @@
 import 'package:stackbuld/commons.dart';
-import 'package:stackbuld/styles/dimensions.dart';
 
 class CartItem extends StatefulWidget {
   const CartItem({super.key});

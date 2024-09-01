@@ -12,18 +12,18 @@ class SearchBox extends StatelessWidget {
       child: TextField(
         // text color
         style: GoogleFonts.poppins(
-            fontSize: fontSizeBody,
-            color: Colors.white,
-          ),
+          fontSize: fontSizeBody,
+          color: appBackgroundColor,
+        ),
 
-          // cursor style
-          cursorColor: appShadowColor,
+        // cursor style
+        cursorColor: appSecondaryColor,
 
         decoration: InputDecoration(
           // enabled border
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(22),
-            borderSide: BorderSide(color: appShadowColor),
+            borderSide: BorderSide(color: appSecondaryColor),
           ),
 
           // focused border
@@ -36,21 +36,21 @@ class SearchBox extends StatelessWidget {
           hintText: 'Search',
           hintStyle: GoogleFonts.poppins(
             fontSize: fontSizeBody,
-            color: appShadowColor,
+            color: appSecondaryColor,
           ),
 
           // prefix icon
-          prefixIcon: const Icon(
+          prefixIcon: Icon(
             Icons.search,
-            color: Colors.white,
+            color: appBackgroundColor,
           ),
 
           // suffix icon
           suffixIcon: GestureDetector(
             onTap: () => Navigator.pushNamed(context, '/filter'),
-            child: const Icon(
+            child: Icon(
               Icons.filter_list,
-              color: Colors.white,
+              color: appBackgroundColor,
             ),
           ),
         ),

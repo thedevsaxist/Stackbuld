@@ -27,7 +27,7 @@ class FilterItems extends StatelessWidget {
         ),
         Divider(
           height: 40,
-          color: appShadowColor,
+          color: appSecondaryColor,
         ),
       ],
     );
