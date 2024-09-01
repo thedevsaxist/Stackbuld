@@ -2,5 +2,6 @@
 	"cSpell.words": [
 		"stackbuld"
 	],
-	"java.configuration.updateBuildConfiguration": "interactive"
+	"java.configuration.updateBuildConfiguration": "interactive",
+	"todo-tree.tree.showBadges": true
 }

@@ -14,13 +14,13 @@ export 'screens/categories/food_category.dart';
 export 'screens/categories/sports_category.dart';
 export 'screens/categories/devices_category.dart';
 export 'screens/categories/cosmetics_category.dart';
+export 'screens/bottom_nav_bar/bottom_nav_bar_ui.dart';
 export 'screens/product_details/product_details_ui.dart';
 export 'screens/product_filter_page/product_filter_page_ui.dart';
 
 // widgets
 export 'widgets/rating.dart';
 export 'widgets/item_card.dart';
-export 'widgets/cart_item.dart';
 export 'widgets/search_box.dart';
 export 'widgets/grid_layout.dart';
 export 'widgets/filter_item.dart';
@@ -28,7 +28,10 @@ export 'widgets/custom_button.dart';
 export 'widgets/price_range_box.dart';
 export 'widgets/add_to_favorite.dart';
 export 'widgets/increment_button.dart';
+export 'widgets/cart_item/cart_item_ui.dart';
 export 'widgets/home_page_floating_icons.dart';
+export 'package:stackbuld/widgets/list_model.dart';
+export 'widgets/wishlist_item/wishlist_item_ui.dart';
 
 
 // styles

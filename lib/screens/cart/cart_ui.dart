@@ -79,7 +79,7 @@ class _CartPageUi extends CartPageLogic {
                       itemCount: productCount,
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        return const CartItem();
+                        return const CartItemUi();
                       },
                     ),
                   ),
@@ -92,7 +92,6 @@ class _CartPageUi extends CartPageLogic {
           const CustomButton(
             buttonLabel: 'Checkout',
           ),
-          
         ],
       ),
     );
