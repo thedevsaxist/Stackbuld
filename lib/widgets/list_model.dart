@@ -1,13 +1,13 @@
 import 'package:stackbuld/commons.dart';
 
-class CartItem extends StatefulWidget {
-  const CartItem({super.key});
+class ListModel extends StatelessWidget {
+  const ListModel({
+    super.key,
+    required this.baseRow,
+  });
 
-  @override
-  State<CartItem> createState() => _CartItemState();
-}
+  final Widget baseRow;
 
-class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -58,27 +58,7 @@ class _CartItemState extends State<CartItem> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Text('Remove', style: GoogleFonts.poppins()),
-                const Spacer(),
-                const IncrementButton(
-                  icon: Icons.remove,
-                ),
-
-                sizedBoxWidthOf32,
-
-                // product quantity
-                const Text(
-                    '1'), //TODO: change this to increment and decrement when the appropriate button is tapped.
-
-                sizedBoxWidthOf32,
-
-                const IncrementButton(
-                  icon: Icons.add,
-                ),
-              ],
-            ),
+            baseRow,
           ],
         ),
       ),

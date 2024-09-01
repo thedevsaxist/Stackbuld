@@ -40,9 +40,12 @@ class SearchBox extends StatelessWidget {
           ),
 
           // prefix icon
-          prefixIcon: Icon(
-            Icons.search,
-            color: appBackgroundColor,
+          prefixIcon: Hero(
+            tag: 'searchIcon',
+            child: Icon(
+              Icons.search,
+              color: appBackgroundColor,
+            ),
           ),
 
           // suffix icon

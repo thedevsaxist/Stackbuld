@@ -1,5 +1,6 @@
 import 'package:stackbuld/commons.dart';
 
+
 part 'wishlist_logic.dart';
 
 class WishlistUi extends StatefulWidget {
@@ -12,6 +13,20 @@ class WishlistUi extends StatefulWidget {
 class _WishlistUi extends WishlistLogic {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Container(
+      decoration: BoxDecoration(
+        color: appBackgroundColor,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: List.generate(
+            wishlistItems,
+            (index) {
+              return const WishlistItemUi();
+            },
+          ),
+        ),
+      ),
+    );
   }
 }

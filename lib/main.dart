@@ -19,9 +19,10 @@ class Stackbuld extends StatelessWidget {
       // routes
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePageUi(),
+        '/': (context) => const BottomNavBarUi(),
         '/cart': (context) => const CartPageUi(),
         '/wishlist': (context) => const WishlistUi(),
+        '/home_page': (context) => const HomePageUi(),
         '/filter': (context) => const ProductFilterPageUi(),
         '/product_details': (context) => const ProductDetailsUi(),
       },
