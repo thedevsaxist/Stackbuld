@@ -16,15 +16,27 @@ class _RatingState extends State<Rating> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      //TODO: Correct the ui to showcase the rating as colored stars rather than none colored
-
-      children: List.generate(
-        widget.numberOfStars < 5 ? widget.numberOfStars : 5,
-        (index) => const Icon(
-          Icons.grade_outlined,
-          size: 18,
+      children: [
+        Row(
+          children: List.generate(
+            widget.numberOfStars,
+            (index) => Icon(
+              Icons.grade,
+              size: 18,
+              color: Colors.amber[700],
+            ),
+          ),
         ),
-      ),
+        Row(
+          children: List.generate(
+            5 - widget.numberOfStars,
+            (index) => const Icon(
+              Icons.grade_outlined,
+              size: 18,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
