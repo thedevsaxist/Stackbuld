@@ -19,7 +19,7 @@ class _RatingState extends State<Rating> {
       //TODO: Correct the ui to showcase the rating as colored stars rather than none colored
 
       children: List.generate(
-        widget.numberOfStars,
+        widget.numberOfStars < 5 ? widget.numberOfStars : 5,
         (index) => const Icon(
           Icons.grade_outlined,
           size: 18,

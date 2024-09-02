@@ -45,5 +45,6 @@ export 'package:stackbuld/styles/dimensions.dart';
 
 
 // models
+export 'models/product_model.dart';
 
 

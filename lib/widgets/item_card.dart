@@ -1,7 +1,16 @@
 import 'package:stackbuld/commons.dart';
 
 class ItemCard extends StatefulWidget {
-  const ItemCard({super.key});
+  const ItemCard({
+    super.key,
+    required this.productName,
+    required this.productPrice,
+    required this.productRating,
+  });
+
+  final String productName;
+  final String productPrice;
+  final int productRating;
 
   @override
   State<ItemCard> createState() => _ItemCardState();
@@ -35,28 +44,31 @@ class _ItemCardState extends State<ItemCard> {
                 sizedBoxHeightOf8,
 
                 // product name
+
+                // TODO: shorten the name when it gets too long
                 Text(
-                  'Metamor4sis Car',
+                  widget.productName,
                   style: GoogleFonts.poppins(),
                 ),
 
                 // product price
                 Text(
-                  '₦ 60,000',
+                  '₦ ${widget.productPrice}',
                   style: GoogleFonts.poppins(
                     fontSize: fontSizeBody,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
 
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // product rating
-                    Rating(numberOfStars: 5),
+
+                    Rating(numberOfStars: widget.productRating),
 
                     // save item
-                    AddToFavorite(),
+                    const AddToFavorite(),
                   ],
                 ),
               ],
