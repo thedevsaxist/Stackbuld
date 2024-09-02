@@ -10,7 +10,6 @@ class GridLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 0.8,
@@ -23,6 +22,8 @@ class GridLayout extends StatelessWidget {
           productName: productsList[index].name,
           productPrice: productsList[index].price,
           productRating: productsList[index].rating,
+          description: productsList[index].description,
+          imagePath: productsList[index].productImage,
         );
       },
     );

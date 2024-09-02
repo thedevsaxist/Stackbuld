@@ -1,3 +1,3 @@
 import 'package:stackbuld/commons.dart';
 
-final m4Car = Image.asset('lib/images/pictures/m4_car.jpg');
+const m4Car = 'lib/images/pictures/m4_car.jpg';

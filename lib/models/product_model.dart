@@ -3,14 +3,14 @@ class ProductModel {
   final String name;
   final String price;
   final int rating;
-  final String? description;
-  final String? productImage;
+  final String description;
+  final String productImage;
 
   const ProductModel({
     required this.name,
     required this.price,
     required this.rating,
-    this.description,
-    this.productImage,
+    required this.description,
+    required this.productImage,
   });
 }

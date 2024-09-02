@@ -33,18 +33,17 @@ export 'widgets/home_page_floating_icons.dart';
 export 'package:stackbuld/widgets/list_model.dart';
 export 'widgets/wishlist_item/wishlist_item_ui.dart';
 
-
 // styles
 export 'package:stackbuld/styles/themes.dart';
 export 'package:stackbuld/styles/dimensions.dart';
 
 // utils
 
-
 // services
-
 
 // models
 export 'models/product_model.dart';
 
-
+String productDescription =
+    "You've probably seen hero animations many times. For example, a screen displays a list of thumbnails representing items for sale. Selecting an item flies it to a new screen, containing more details and a 'Buy' button.";
+  

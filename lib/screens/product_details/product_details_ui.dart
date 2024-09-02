@@ -1,10 +1,22 @@
 import 'package:stackbuld/commons.dart';
-import 'package:stackbuld/styles/themes.dart';
 
 part 'product_details_logic.dart';
 
 class ProductDetailsUi extends StatefulWidget {
-  const ProductDetailsUi({super.key});
+  const ProductDetailsUi({
+    super.key,
+    required this.productName,
+    required this.productPrice,
+    required this.productRating,
+    this.imagePath,
+    this.description,
+  });
+
+  final String productName;
+  final String productPrice;
+  final int productRating;
+  final String? imagePath;
+  final String? description;
 
   @override
   State<ProductDetailsUi> createState() => _ProductDetailsUi();
@@ -20,7 +32,9 @@ class _ProductDetailsUi extends ProductDetailsLogic {
             alignment: Alignment.bottomRight,
             children: [
               // product image
-              m4Car,
+              Image.asset(
+                widget.imagePath!,
+              ),
 
               // back button
               Positioned(
@@ -57,7 +71,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
                 children: [
                   // product name
                   Text(
-                    'Metamor4sis Car',
+                    widget.productName,
                     style: GoogleFonts.poppins(fontSize: fontSizeTitle),
                   ),
 
@@ -66,7 +80,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
                     children: [
                       // product price
                       Text(
-                        '₦ 60,000',
+                        '₦ ${widget.productPrice}',
                         style: GoogleFonts.poppins(
                           fontSize: fontSizeHeadline,
                           fontWeight: FontWeight.bold,
@@ -74,7 +88,9 @@ class _ProductDetailsUi extends ProductDetailsLogic {
                       ),
 
                       // product rating
-                      const Rating(numberOfStars: 5),
+                      Rating(
+                        numberOfStars: widget.productRating,
+                      ),
                     ],
                   ),
 
@@ -84,7 +100,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
 
                   // product Description
                   Text(
-                    "You've probably seen hero animations many times. For example, a screen displays a list of thumbnails representing items for sale. Selecting an item flies it to a new screen, containing more details and a 'Buy' button.",
+                    widget.description!,
                     style: GoogleFonts.poppins(
                       fontSize: fontSizeBody,
                       color: appSecondaryColor,

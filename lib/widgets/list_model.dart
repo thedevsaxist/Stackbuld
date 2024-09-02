@@ -28,7 +28,7 @@ class ListModel extends StatelessWidget {
                 // product picture
                 SizedBox(
                   width: 80,
-                  child: m4Car,
+                  child: Image.asset(m4Car),
                 ),
 
                 Padding(
