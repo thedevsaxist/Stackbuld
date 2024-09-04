@@ -69,17 +69,19 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      const Row(
+                      Row(
                         children: [
                           // price range from
                           PriceRangeBox(
                             boxLabel: 'from',
+                            controller: fromController,
                           ),
                           sizedBoxWidthOf32,
 
                           // price range to
                           PriceRangeBox(
                             boxLabel: 'to',
+                            controller: toController,
                           )
                         ],
                       ),
@@ -103,7 +105,7 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
                           5,
                           (index) {
                             return Rating(
-                              numberOfStars: index,
+                              productRating: index.toDouble(),
                             );
                           },
                         ),

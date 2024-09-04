@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:stackbuld/commons.dart';
 
 void main() async {
@@ -5,7 +6,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const Stackbuld());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ProductDetailsHelperMethod(context: context),
+      child: const Stackbuld(),
+    ),
+  );
 }
 
 class Stackbuld extends StatelessWidget {
@@ -24,7 +30,7 @@ class Stackbuld extends StatelessWidget {
         '/wishlist': (context) => const WishlistUi(),
         '/home_page': (context) => const HomePageUi(),
         '/filter': (context) => const ProductFilterPageUi(),
-        '/product_details': (context) => const ProductDetailsUi(),
+        '/add_product': (context) => const AddProductUi(),
       },
       theme: ThemeData(
         useMaterial3: true,

@@ -4,9 +4,11 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.buttonLabel,
+    this.onTap,
   });
 
   final String buttonLabel;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +23,21 @@ class CustomButton extends StatelessWidget {
             color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: appPrimaryColor,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Text(
-                    buttonLabel.toUpperCase(),
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: fontSizeBody,
+              child: GestureDetector(
+                onTap: onTap,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: appPrimaryColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      buttonLabel.toUpperCase(),
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: fontSizeBody,
+                      ),
                     ),
                   ),
                 ),

@@ -5,12 +5,14 @@ export 'package:flutter/material.dart';
 export 'package:flutter/cupertino.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:firebase_core/firebase_core.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
 
 // screens
 export 'screens/cart/cart_ui.dart';
 export 'screens/wishlist/wishlist_ui.dart';
 export 'screens/home_page/home_page_ui.dart';
 export 'screens/categories/food_category.dart';
+export 'screens/add_product/add_product_ui.dart';
 export 'screens/categories/sports_category.dart';
 export 'screens/categories/devices_category.dart';
 export 'screens/categories/cosmetics_category.dart';
@@ -33,17 +35,19 @@ export 'widgets/home_page_floating_icons.dart';
 export 'package:stackbuld/widgets/list_model.dart';
 export 'widgets/wishlist_item/wishlist_item_ui.dart';
 
-
 // styles
-export 'package:stackbuld/styles/themes.dart';
-export 'package:stackbuld/styles/dimensions.dart';
+export 'styles/themes.dart';
+export 'styles/dimensions.dart';
 
 // utils
-
+export 'utils/product_details_helper_method.dart';
 
 // services
-
+export 'services/firestore_database.dart';
 
 // models
+export 'models/product_model.dart';
 
-
+String productDescription =
+    "You've probably seen hero animations many times. For example, a screen displays a list of thumbnails representing items for sale. Selecting an item flies it to a new screen, containing more details and a 'Buy' button.";
+  
