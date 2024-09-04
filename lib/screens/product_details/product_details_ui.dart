@@ -32,9 +32,9 @@ class _ProductDetailsUi extends ProductDetailsLogic {
             alignment: Alignment.bottomRight,
             children: [
               // product image
-              Image.asset(
-                widget.imagePath,
-              ),
+              widget.imagePath.isNotEmpty
+                  ? Image.network(widget.imagePath)
+                  : Image.asset(m4Car),
 
               // back button
               Positioned(
@@ -63,6 +63,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
               ),
             ],
           ),
+
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -72,7 +73,9 @@ class _ProductDetailsUi extends ProductDetailsLogic {
                   // product name
                   Text(
                     widget.productName,
-                    style: GoogleFonts.poppins(fontSize: fontSizeTitle),
+                    style: GoogleFonts.poppins(
+                      fontSize: fontSizeTitle,
+                    ),
                   ),
 
                   Row(
@@ -101,6 +104,8 @@ class _ProductDetailsUi extends ProductDetailsLogic {
                   // product Description
                   Text(
                     widget.description,
+                    maxLines: 5,
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.poppins(
                       fontSize: fontSizeBody,
                       color: appSecondaryColor,

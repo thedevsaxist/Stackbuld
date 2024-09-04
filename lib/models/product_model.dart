@@ -2,7 +2,7 @@
 class ProductModel {
   final String name;
   final String price;
-  final double? rating;
+  final String? rating;
   final String? description;
   final String productImage;
 
@@ -21,7 +21,7 @@ class ProductModel {
       name: map['name'] ?? '',
       price: map['price'] ?? '',
       description: map['description'] ?? '',
-      rating: map['rating']?.toDouble() ?? 0.0,
+      rating: map['rating'] ?? '',
       productImage: map['imageUrl'] ?? '',
     );
   }

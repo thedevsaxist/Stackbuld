@@ -15,8 +15,11 @@ class GridLayout extends StatelessWidget {
       return collectionRef.snapshots();
     }
 
+    /// instance of the database connection
+    final FirestoreDatabase firestoreDatabase = FirestoreDatabase();
+
     return StreamBuilder(
-      stream: getCollectionStream(catalogue),
+      stream: firestoreDatabase.foodCatalogue.snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           print("Waiting");
@@ -45,7 +48,7 @@ class GridLayout extends StatelessWidget {
             return ItemCard(
               productName: product.name,
               productPrice: product.price,
-              productRating: product.rating!,
+              productRating: double.parse(product.rating!),
               description: product.description!,
               imagePath: product.productImage,
             );

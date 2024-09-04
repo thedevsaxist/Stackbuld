@@ -1,9 +1,16 @@
 import 'package:stackbuld/commons.dart';
 
-class HomePageFloatingIcons extends StatelessWidget {
+class HomePageFloatingIcons extends StatefulWidget {
   const HomePageFloatingIcons({
     super.key,
   });
+
+  @override
+  State<HomePageFloatingIcons> createState() => _HomePageFloatingIconsState();
+}
+
+class _HomePageFloatingIconsState extends State<HomePageFloatingIcons> {
+  void addNewProduct() => Navigator.pushNamed(context, '/add_product');
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,7 @@ class HomePageFloatingIcons extends StatelessWidget {
         // add new item
         FloatingActionButton(
           heroTag: 'add-product-tag',
-          onPressed: () {},
+          onPressed: addNewProduct,
           child: Icon(
             Icons.add,
             size: fontSizeHeadline,

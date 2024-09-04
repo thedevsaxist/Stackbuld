@@ -52,7 +52,9 @@ class _ItemCardState extends State<ItemCard> {
 
                 Expanded(
                   child: Center(
-                    child: Image.asset(m4Car),
+                    child: widget.imagePath.isNotEmpty
+                        ? Image.network(widget.imagePath)
+                        : Image.asset(m4Car),
                   ),
                 ),
 

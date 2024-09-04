@@ -30,7 +30,7 @@ class Stackbuld extends StatelessWidget {
         '/wishlist': (context) => const WishlistUi(),
         '/home_page': (context) => const HomePageUi(),
         '/filter': (context) => const ProductFilterPageUi(),
-        // '/product_details': (context) => const ProductDetailsUi(),
+        '/add_product': (context) => const AddProductUi(),
       },
       theme: ThemeData(
         useMaterial3: true,

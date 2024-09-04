@@ -1,0 +1,3 @@
+class FloatingIconsHelperMethod {
+  void addNewProduct(){}
+}

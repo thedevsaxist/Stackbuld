@@ -12,6 +12,7 @@ export 'screens/cart/cart_ui.dart';
 export 'screens/wishlist/wishlist_ui.dart';
 export 'screens/home_page/home_page_ui.dart';
 export 'screens/categories/food_category.dart';
+export 'screens/add_product/add_product_ui.dart';
 export 'screens/categories/sports_category.dart';
 export 'screens/categories/devices_category.dart';
 export 'screens/categories/cosmetics_category.dart';
