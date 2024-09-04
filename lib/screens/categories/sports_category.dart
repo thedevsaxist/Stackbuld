@@ -43,7 +43,7 @@ class SportsCategory extends StatelessWidget {
       ),
     ];
     return GridLayout(
-      productsList: sportProductsList,
+      catalogue: FirestoreDatabase().foodCatalogue,
     );
   }
 }

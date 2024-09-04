@@ -22,7 +22,12 @@ class _WishlistUi extends WishlistLogic {
           children: List.generate(
             wishlistItems,
             (index) {
-              return const WishlistItemUi();
+              //TODO: fill this out
+              return const WishlistItemUi(
+                name: '',
+                price: '',
+                productImage: m4Car,
+              );
             },
           ),
         ),

@@ -36,7 +36,7 @@ class DevicesCategory extends StatelessWidget {
       ),
     ];
     return GridLayout(
-      productsList: deviceProductsList,
+      catalogue: FirestoreDatabase().foodCatalogue,
     );
   }
 }

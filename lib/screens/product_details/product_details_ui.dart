@@ -8,15 +8,15 @@ class ProductDetailsUi extends StatefulWidget {
     required this.productName,
     required this.productPrice,
     required this.productRating,
-    this.imagePath,
-    this.description,
+    required this.imagePath,
+    required this.description,
   });
 
   final String productName;
   final String productPrice;
-  final int productRating;
-  final String? imagePath;
-  final String? description;
+  final double productRating;
+  final String imagePath;
+  final String description;
 
   @override
   State<ProductDetailsUi> createState() => _ProductDetailsUi();
@@ -33,7 +33,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
             children: [
               // product image
               Image.asset(
-                widget.imagePath!,
+                widget.imagePath,
               ),
 
               // back button
@@ -89,7 +89,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
 
                       // product rating
                       Rating(
-                        numberOfStars: widget.productRating,
+                        productRating: widget.productRating,
                       ),
                     ],
                   ),
@@ -100,7 +100,7 @@ class _ProductDetailsUi extends ProductDetailsLogic {
 
                   // product Description
                   Text(
-                    widget.description!,
+                    widget.description,
                     style: GoogleFonts.poppins(
                       fontSize: fontSizeBody,
                       color: appSecondaryColor,
@@ -113,7 +113,10 @@ class _ProductDetailsUi extends ProductDetailsLogic {
 
           // add to cart
           // TODO: When this button is pressed, it should add the product to the cart
-          const CustomButton(buttonLabel: 'add to cart')
+          CustomButton(
+            buttonLabel: 'add to cart',
+            onTap: addToCart,
+          )
         ],
       ),
     );

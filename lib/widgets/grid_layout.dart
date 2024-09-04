@@ -3,27 +3,53 @@ import 'package:stackbuld/commons.dart';
 class GridLayout extends StatelessWidget {
   const GridLayout({
     super.key,
-    required this.productsList,
+    required this.catalogue,
   });
 
-  final List<ProductModel> productsList;
+  final CollectionReference<Object?> catalogue;
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 0.8,
-        crossAxisCount: 2,
-      ),
-      shrinkWrap: true,
-      itemCount: productsList.length,
-      itemBuilder: (context, index) {
-        return ItemCard(
-          productName: productsList[index].name,
-          productPrice: productsList[index].price,
-          productRating: productsList[index].rating,
-          description: productsList[index].description,
-          imagePath: productsList[index].productImage,
+    Stream<QuerySnapshot> getCollectionStream(
+        CollectionReference collectionRef) {
+      return collectionRef.snapshots();
+    }
+
+    return StreamBuilder(
+      stream: getCollectionStream(catalogue),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          print("Waiting");
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (snapshot.hasError) {
+          print("There's an error in the food catalogue: ${snapshot.error}");
+        } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          print("The catalogue is empty");
+        }
+
+        final productsList = snapshot.data!.docs.map((doc) {
+          return ProductModel.fromMap(doc.data() as Map<String, dynamic>);
+        }).toList();
+
+        return GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            childAspectRatio: 0.8,
+            crossAxisCount: 2,
+          ),
+          shrinkWrap: true,
+          itemCount: productsList.length,
+          itemBuilder: (context, index) {
+            ProductModel product = productsList[index];
+            return ItemCard(
+              productName: product.name,
+              productPrice: product.price,
+              productRating: product.rating!,
+              description: product.description!,
+              imagePath: product.productImage,
+            );
+          },
         );
       },
     );

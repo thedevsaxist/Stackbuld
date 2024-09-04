@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:stackbuld/commons.dart';
 
 void main() async {
@@ -5,7 +6,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const Stackbuld());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ProductDetailsHelperMethod(context: context),
+      child: const Stackbuld(),
+    ),
+  );
 }
 
 class Stackbuld extends StatelessWidget {

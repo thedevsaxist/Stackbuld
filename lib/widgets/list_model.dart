@@ -4,9 +4,17 @@ class ListModel extends StatelessWidget {
   const ListModel({
     super.key,
     required this.baseRow,
+    required this.name,
+    required this.price,
+    required this.productImage,
   });
 
   final Widget baseRow;
+  final String name;
+  final String price;
+  final String productImage;
+  // final double rating;
+  // final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +36,7 @@ class ListModel extends StatelessWidget {
                 // product picture
                 SizedBox(
                   width: 80,
-                  child: Image.asset(m4Car),
+                  child: Image.asset(productImage),
                 ),
 
                 Padding(
@@ -39,7 +47,7 @@ class ListModel extends StatelessWidget {
                       // product name
 
                       Text(
-                        'Metamor4sis Car',
+                        name,
                         style: GoogleFonts.poppins(
                           fontSize: fontSizeLabel,
                         ),
@@ -47,7 +55,7 @@ class ListModel extends StatelessWidget {
 
                       // product price
                       Text(
-                        '₦ 100,000',
+                        '₦ $price',
                         style: GoogleFonts.poppins(
                           fontSize: fontSizeBody,
                           fontWeight: FontWeight.bold,

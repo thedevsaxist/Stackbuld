@@ -5,6 +5,7 @@ export 'package:flutter/material.dart';
 export 'package:flutter/cupertino.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:firebase_core/firebase_core.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
 
 // screens
 export 'screens/cart/cart_ui.dart';
@@ -34,12 +35,14 @@ export 'package:stackbuld/widgets/list_model.dart';
 export 'widgets/wishlist_item/wishlist_item_ui.dart';
 
 // styles
-export 'package:stackbuld/styles/themes.dart';
-export 'package:stackbuld/styles/dimensions.dart';
+export 'styles/themes.dart';
+export 'styles/dimensions.dart';
 
 // utils
+export 'utils/product_details_helper_method.dart';
 
 // services
+export 'services/firestore_database.dart';
 
 // models
 export 'models/product_model.dart';

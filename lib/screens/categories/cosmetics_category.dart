@@ -29,7 +29,7 @@ class CosmeticsCategory extends StatelessWidget {
       ),
     ];
     return GridLayout(
-      productsList: cosmeticProductsList,
+      catalogue: FirestoreDatabase().foodCatalogue,
     );
   }
 }

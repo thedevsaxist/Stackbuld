@@ -103,7 +103,7 @@ class _ProductFilterPageUi extends ProductFilterPageLogic {
                           5,
                           (index) {
                             return Rating(
-                              numberOfStars: index,
+                              productRating: index.toDouble(),
                             );
                           },
                         ),

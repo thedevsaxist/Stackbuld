@@ -12,7 +12,7 @@ class ItemCard extends StatefulWidget {
 
   final String productName;
   final String productPrice;
-  final int productRating;
+  final double productRating;
   final String description;
   final String imagePath;
 
@@ -80,7 +80,7 @@ class _ItemCardState extends State<ItemCard> {
                   children: [
                     // product rating
 
-                    Rating(numberOfStars: widget.productRating),
+                    Rating(productRating: widget.productRating),
 
                     // save item
                     const AddToFavorite(),

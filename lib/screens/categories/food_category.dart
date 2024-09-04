@@ -1,42 +1,20 @@
 import 'package:stackbuld/commons.dart';
 
-class FoodCategory extends StatelessWidget {
+class FoodCategory extends StatefulWidget {
   const FoodCategory({super.key});
 
   @override
+  State<FoodCategory> createState() => _FoodCategoryState();
+}
+
+class _FoodCategoryState extends State<FoodCategory> {
+  /// instance of the database connection
+  final FirestoreDatabase firestoreDatabase = FirestoreDatabase();
+
+  @override
   Widget build(BuildContext context) {
-    List<ProductModel> foodProductsList = [
-      ProductModel(
-        name: 'Bread',
-        price: '1,000',
-        rating: 5,
-        description: productDescription,
-        productImage: m4Car,
-      ),
-      ProductModel(
-        name: 'Indomie',
-        price: '200',
-        rating: 4,
-        description: productDescription,
-        productImage: m4Car,
-      ),
-      ProductModel(
-        name: 'Yam',
-        price: '3,000',
-        rating: 3,
-        description: productDescription,
-        productImage: m4Car,
-      ),
-      ProductModel(
-        name: 'Biscuit',
-        price: '100',
-        rating: 2,
-        description: productDescription,
-        productImage: m4Car,
-      ),
-    ];
     return GridLayout(
-      productsList: foodProductsList,
+      catalogue: firestoreDatabase.foodCatalogue,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:stackbuld/commons.dart';
 
 part 'cart_logic.dart';
@@ -12,6 +13,7 @@ class CartPageUi extends StatefulWidget {
 class _CartPageUi extends CartPageLogic {
   @override
   Widget build(BuildContext context) {
+  final cartItems = context.watch<ProductDetailsHelperMethod>().cartItems;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -48,7 +50,7 @@ class _CartPageUi extends CartPageLogic {
                   ),
                 ),
                 Text(
-                  '₦ 100,000',
+                  '₦ $subtotal',
                   style: GoogleFonts.poppins(
                     fontSize: fontSizeBody,
                     fontWeight: FontWeight.bold,
@@ -67,7 +69,7 @@ class _CartPageUi extends CartPageLogic {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'CART ITEMS ($productCount)',
+                    'CART ITEMS (${cartItems.length})',
                     style: GoogleFonts.poppins(
                       fontSize: fontSizeBody,
                       color: Colors.grey[600],
@@ -76,10 +78,14 @@ class _CartPageUi extends CartPageLogic {
                   sizedBoxHeightOf8,
                   Expanded(
                     child: ListView.builder(
-                      itemCount: productCount,
+                      itemCount: cartItems.length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        return const CartItemUi();
+                        return CartItemUi(
+                          name: cartItems[index].name,
+                          price: cartItems[index].price.toString(),
+                          productImage: cartItems[index].productImage,
+                        );
                       },
                     ),
                   ),
